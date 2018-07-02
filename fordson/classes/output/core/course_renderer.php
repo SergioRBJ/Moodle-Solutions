@@ -429,7 +429,7 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
 		$auxSql .= "WHERE cc.visible = 1 AND u.id = {$USER->id} AND cc.id = {$categoria_teste} GROUP BY cc.name ORDER BY cc.sortorder ASC";
 		$auxArray = $DB->get_records_sql($auxSql);			
 		
-        //$content .= '<div class="container-fluid"> <div class="row">';
+        $content .= '<div class="container-fluid"> <div class="row">';
         $rowcontent = '';
    
 
