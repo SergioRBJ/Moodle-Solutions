@@ -23,7 +23,7 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 # Versions and Updates
 
 
-## Moodle 3.5 Fordson v3.5 release 1
+## Moodle 3.5 Fordson  release 1
 * Initial release for Moodle 3.5.  This version is not backwards compatible.
 * Fordson version 3.5 is a break from previous builds and versions.  Brand new for Moodle 3.5 is the ability of the Fordson theme to offer unprecendented customization of both page layout and style.  Fordson's new approach to layout and style offers more than 160 unique combinations.  This includes 2 Preset Styles, 5 Page Layouts, 8 Sections Styles, and 8 Course Listing Styles.  Mix and match any of these to create a unique and beautiful presentation of your Moodle site.
 * Requires Moodle 3.5
@@ -36,5 +36,5 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 ## Sergio RBJ Updates
 
 * View only the subjects and categories in which the student/tutor belongs.
-* Add JavaScript support button on homepage.
+* Add JavaScript support button on Homepage.
 * Remove submenus File, My Courses and  Competences on navdrawer.
