@@ -32,3 +32,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Fixed buttons for Easy Enrollment Add-On styling
 * Fixed issue where turning editing on did not return you to the proper place on the page.
 * Fixed issue where scroll to top button wasn't working on course pages.
+
+## Sergio RBJ Updates
+
+* View only the subjects and categories in which the student/tutor belongs.
+* Add JavaScript support button on homepage.
+* Remove submenus File, My Courses and  Competences on navdrawer.
