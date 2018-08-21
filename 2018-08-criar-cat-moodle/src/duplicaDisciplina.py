@@ -7,12 +7,10 @@ class Duplica:
     def duplicaDisc(self):
         config = Config()
 
-        restFormat = 'json'
-
         '''Resgata todos as disciplinas'''
 
-        serverUrlDisc = config.credenciais['domainname'] + "/webservice/rest/server.php" + "?wstoken=" + \
-                    config.credenciais['token'] + "&wsfunction=" + "core_course_get_courses" + "&moodlewsrestformat=" + restFormat
+        serverUrlDisc = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
+                    config.duplicaToken + "&wsfunction=" + "core_course_get_courses" + "&moodlewsrestformat=" + config.formatoRest
 
         response = requests.post(serverUrlDisc)
         disciplinasAva = response.json()
@@ -20,9 +18,8 @@ class Duplica:
         '''Resgata todas as categorias'''
 
         criteria = {'criteria[0][key]': 'parent', 'criteria[0][value]': 20}
-        serverUrlCat = config.credenciais['domainname'] + "/webservice/rest/server.php" + "?wstoken=" + \
-                        config.credenciais[
-                            'token'] + "&wsfunction=" + "core_course_get_categories" + "&moodlewsrestformat=" + restFormat
+        serverUrlCat = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
+                        config.duplicaToken + "&wsfunction=" + "core_course_get_categories" + "&moodlewsrestformat=" + config.formatoRest
 
         response = requests.post(serverUrlCat, criteria)
         categoriasAva = response.json()
@@ -44,9 +41,10 @@ class Duplica:
                                           'options[2][value]': '0'
                                           }
 
-                                serverUrlImp = config.credenciais[
-                                                   'domainname'] + "/webservice/rest/server.php" + "?wstoken=" + \
-                                               config.credenciais[
-                                                   'token'] + "&wsfunction=" + "core_course_import_course" + "&moodlewsrestformat=" + restFormat
+                                serverUrlImp = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
+                                               config.duplicaToken + "&wsfunction=" + "core_course_import_course" + "&moodlewsrestformat=" + config.formatoRest
 
                                 response = requests.post(serverUrlImp, params)
+
+                                print(categoriasPolo['name'] + "/ " + disciplinasReplica['fullname'])
+

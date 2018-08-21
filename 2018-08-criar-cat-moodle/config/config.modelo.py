@@ -1,7 +1,15 @@
 class Config:
     def __init__(self):
 
-        self.credenciais = {}
-        self.credenciais['token'] = 'token'
-        self.credenciais['domainname'] = 'dominio'
-        self.credenciais['functionname'] = 'nome_da_funcao_moodle'
+        ''' Configurações Gerais '''
+
+        self.formatoRest = 'json'
+        self.dominio = 'http://localhost/moodle'
+
+        ''' Configuração das credenciais do método de criação de categorias '''
+
+        self.categoriaToken = ''
+
+        ''' Configuração das credenciais do método de duplicação de disciplinas '''
+
+        self.duplicaToken = ''

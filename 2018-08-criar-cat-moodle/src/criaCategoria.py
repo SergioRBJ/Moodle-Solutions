@@ -13,8 +13,8 @@ criteria = {'criteria[0][key]': 'parent', 'criteria[0][value]': categoriaSemestr
 
 config = Config()
 
-serverurl = config.credenciais['domainname'] + "/webservice/rest/server.php" + "?wstoken=" + \
-            config.credenciais['token'] + "&wsfunction=" + "core_course_get_categories" + "&moodlewsrestformat=" + config.formatoRest
+serverurl = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
+            config.categoriaToken + "&wsfunction=" + "core_course_get_categories" + "&moodlewsrestformat=" + config.formatoRest
 
 response = requests.post(serverurl, criteria)
 categoriasAva = response.json()
@@ -29,8 +29,8 @@ for categoriaRm in dadosRm:
         categories = {'categories[0][name]': categoriaRm['name'],
                       'categories[0][parent]': categoriaSemestre}
 
-        serverurl = config.credenciais['domainname'] + "/webservice/rest/server.php" + "?wstoken=" + \
-                    config.credenciais['token'] + "&wsfunction=" + "core_course_create_categories" \
+        serverurl = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
+                    config.categoriaToken + "&wsfunction=" + "core_course_create_categories" \
                     + "&moodlewsrestformat=" + config.formatoRest
 
         resp = requests.post(serverurl, categories)
