@@ -3,37 +3,43 @@ from pprint import pprint
 
 from config.config import Config
 
-dadosRm = [{'name': 'Polo Itatiba', 'id': '01'},
-            {'name': 'Polo Jaguariuna', 'id': '02'},
-           {'name': 'Polo Itu', 'id': '03'}]
+class CriaCategoria:
+    def criacaoCat(self):
 
-categoriaSemestre = 20
+        dadosRm = [{'name': 'Polo Itatiba', 'id': '01'},
+                   {'name': 'Polo Jaguariuna', 'id': '02'},
+                   {'name': 'Polo Itu', 'id': '03'},
+                   {'name': 'Polo Bebedouro', 'id': '04'},
+                   {'name': 'Polo Bambui', 'id': '05'}]
 
-criteria = {'criteria[0][key]': 'parent', 'criteria[0][value]': categoriaSemestre}
+        categoriaSemestre = 20
 
-config = Config()
+        criteria = {'criteria[0][key]': 'parent', 'criteria[0][value]': categoriaSemestre}
 
-serverurl = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
-            config.categoriaToken + "&wsfunction=" + "core_course_get_categories" + "&moodlewsrestformat=" + config.formatoRest
-
-response = requests.post(serverurl, criteria)
-categoriasAva = response.json()
-
-categoriasAvaNome = []
-
-for nome in categoriasAva:
-    categoriasAvaNome.append(nome['name'])
-
-for categoriaRm in dadosRm:
-    if categoriaRm['name'] not in categoriasAvaNome:
-        categories = {'categories[0][name]': categoriaRm['name'],
-                      'categories[0][parent]': categoriaSemestre}
+        config = Config()
 
         serverurl = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
-                    config.categoriaToken + "&wsfunction=" + "core_course_create_categories" \
-                    + "&moodlewsrestformat=" + config.formatoRest
+                    config.categoriaToken + "&wsfunction=" + "core_course_get_categories" + "&moodlewsrestformat=" + config.formatoRest
 
-        resp = requests.post(serverurl, categories)
+        response = requests.post(serverurl, criteria)
+        categoriasAva = response.json()
 
-        pprint(serverurl)
-        pprint(resp.json())
+        categoriasAvaNome = []
+
+        for nome in categoriasAva:
+            categoriasAvaNome.append(nome['name'])
+
+        for categoriaRm in dadosRm:
+            if categoriaRm['name'] not in categoriasAvaNome:
+                categories = {'categories[0][name]': categoriaRm['name'],
+                              'categories[0][parent]': categoriaSemestre}
+
+                serverurl = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
+                            config.categoriaToken + "&wsfunction=" + "core_course_create_categories" \
+                            + "&moodlewsrestformat=" + config.formatoRest
+
+                resp = requests.post(serverurl, categories)
+                polo = resp.json()
+
+                
+
