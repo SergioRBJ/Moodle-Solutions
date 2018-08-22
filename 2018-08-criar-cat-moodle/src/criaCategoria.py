@@ -12,11 +12,8 @@ class CriaCategoria:
                    {'name': 'Polo Bebedouro', 'id': '04'},
                    {'name': 'Polo Bambui', 'id': '05'}]
 
-        categoriaSemestre = 20
-
-        criteria = {'criteria[0][key]': 'parent', 'criteria[0][value]': categoriaSemestre}
-
         config = Config()
+        criteria = {'criteria[0][key]': 'parent', 'criteria[0][value]': config.categoriaSemestre}
 
         serverurl = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
                     config.categoriaToken + "&wsfunction=" + "core_course_get_categories" + "&moodlewsrestformat=" + config.formatoRest
@@ -25,14 +22,14 @@ class CriaCategoria:
         categoriasAva = response.json()
 
         categoriasAvaNome = []
-
+        polos = []
         for nome in categoriasAva:
             categoriasAvaNome.append(nome['name'])
 
         for categoriaRm in dadosRm:
             if categoriaRm['name'] not in categoriasAvaNome:
                 categories = {'categories[0][name]': categoriaRm['name'],
-                              'categories[0][parent]': categoriaSemestre}
+                              'categories[0][parent]': config.categoriaSemestre}
 
                 serverurl = config.dominio + "/webservice/rest/server.php" + "?wstoken=" + \
                             config.categoriaToken + "&wsfunction=" + "core_course_create_categories" \
@@ -41,5 +38,7 @@ class CriaCategoria:
                 resp = requests.post(serverurl, categories)
                 polo = resp.json()
 
-                
+                polos.append(polo[0]['name'])
+
+        return polos
 

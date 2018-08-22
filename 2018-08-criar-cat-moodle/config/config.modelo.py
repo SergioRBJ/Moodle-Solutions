@@ -9,6 +9,7 @@ class Config:
         ''' Configuração das credenciais do método de criação de categorias '''
 
         self.categoriaToken = ''
+        self.categoriaSemestre = ''
 
         ''' Configuração das credenciais do método de duplicação de disciplinas '''
 

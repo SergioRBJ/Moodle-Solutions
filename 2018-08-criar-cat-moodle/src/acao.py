@@ -16,7 +16,12 @@ class Acao:
             print("%s" % datetime.strftime(data, "%d/%m/%Y - %H:%M"))
             print("##############################")
 
-            print(criaCat)
+            for nomePolos in categorias:
+                print(nomePolos)
+
+        else:
+            print("Nenhuma categoria de polo criada!")
+
 
 
 
