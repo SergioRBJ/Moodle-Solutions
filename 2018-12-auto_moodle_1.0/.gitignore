@@ -1,0 +1,13 @@
+# Arquivos do PyCharm
+.idea/
+*__pycache__
+
+# Arquivos de configuração da aplicação
+config/config.py
+config/conexao.py
+
+# Conf Produção
+confprod/
+
+
+
