@@ -8,7 +8,6 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 class Grupo:
 
-    '''Resgata todas as disciplinas modelo'''
     def alocaGrupo(self):
 
         config = Config()
