@@ -9,5 +9,8 @@ config/conexao.py
 # Conf Produção
 confprod/
 
+# Testes
+testes.py
+
 
 
