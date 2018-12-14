@@ -20,7 +20,7 @@ class Grupo:
                 LEFT JOIN mdl_groups_members gms ON gms.groupid = gs.id
                 WHERE gs.courseid = c.id AND gs.name = u.institution) AS GRUPO_ESPERADO_ID
                 
-                FROM moodle.mdl_user u
+                FROM mdl_user u
                 INNER JOIN mdl_role_assignments ra ON ra.userid = u.id
                 INNER JOIN mdl_context cx ON cx.id = ra.contextid AND cx.contextlevel =50
                 INNER JOIN mdl_course c ON c.id = cx.instanceid
@@ -47,8 +47,7 @@ class Grupo:
             response = requests.get(serverUrlDisc, verify=False)
             response.json()
 
-            listaAlunos.append(
-                [{'nome': RA_ALUNO, 'grupo': POLO, 'disciplina': DISCIPLINA}])
+            listaAlunos.append([{'nome': RA_ALUNO, 'grupo': POLO, 'disciplina': DISCIPLINA}])
 
         return listaAlunos
 
