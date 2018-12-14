@@ -10,7 +10,7 @@ config/conexao.py
 confprod/
 
 # Testes
-testes.py
+/testes.py
 
 
 
