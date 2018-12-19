@@ -63,10 +63,10 @@ class Acao:
 
         if (len(alunos) > 0):
 
-            print("##############################")
+            print("##################################")
             print("Alunos Alocados em Grupos")
             print("%s" % datetime.strftime(data, "%d/%m/%Y - %H:%M"))
-            print("##############################")
+            print("##################################")
 
             for aluno in alunos:
                 print(aluno[0]['nome'] + ' - ' + aluno[0]['grupo'] + ' - ', aluno[0]['disciplina'])
