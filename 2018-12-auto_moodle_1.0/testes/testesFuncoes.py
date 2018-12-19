@@ -4,6 +4,7 @@ import requests
 from config.config import Config
 from pprint import pprint
 from src.alocaGrupo import Grupo
+import os
 
 '''cricat = CriaCategoria()
 retorno = cricat.getCategoriaAVA()
@@ -54,3 +55,5 @@ retorno = aloca.getDisModelo()
 pprint(retorno)'''
 
 
+if os.path.exists('../cert-file'):
+    print('sucesso')

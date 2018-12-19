@@ -11,6 +11,7 @@ confprod/
 
 # Testes
 /testes.py
+testes/testesFuncoes.py
 
 
 

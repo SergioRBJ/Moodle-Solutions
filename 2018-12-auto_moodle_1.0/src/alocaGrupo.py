@@ -44,7 +44,7 @@ class Grupo:
                             + config.formatoRest + "&members[0][groupid]=" \
                             + str(GRUPO_ESPERADO_ID) + "&members[0][userid]=" + str(ID_ALUNO)
 
-            response = requests.get(serverUrlDisc, verify=False)
+            response = requests.get(serverUrlDisc, verify='../cert-file/certs.pem')
             response.json()
 
             listaAlunos.append([{'nome': RA_ALUNO, 'grupo': POLO, 'disciplina': DISCIPLINA}])

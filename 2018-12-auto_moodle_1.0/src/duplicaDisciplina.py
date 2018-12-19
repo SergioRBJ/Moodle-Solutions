@@ -56,7 +56,7 @@ class Duplica:
                                    + "&deletecontent=1" + "&options[0][name]=activities&options[0][value]=1" + "&options[1][name]=blocks&options[1][value]=0" \
                                    + "&options[2][name]=filters&options[2][value]=0"
 
-                    requests.get(serverUrlImp, verify=False)
+                    requests.get(serverUrlImp, verify='/cert-file/certs.pem')
                     listaImportadas.append(discModeloReg[0]['fullname'])
 
         return listaImportadas
