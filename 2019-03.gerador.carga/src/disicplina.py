@@ -36,3 +36,14 @@ class Disciplina:
         fget=getSiglaDisc(),
         fset=setSiglaDisc()
     )
+
+    def getTipoDisc(self):
+        return self._tipoDisc
+
+    def setTipoDisc(self, tipoDisc):
+        self._tipoDisc = tipoDisc
+
+    tipoDisc = property(
+        fget=getTipoDisc(),
+        fset=setTipoDisc()
+    )
