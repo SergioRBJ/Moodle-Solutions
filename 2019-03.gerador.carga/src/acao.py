@@ -6,4 +6,4 @@ class Acao:
     def gerarCsvShortname(self):
 
         data = datetime.today()
-        shortname = GeradorCSV.geraCSV()
+        shortname = GeradorCSV.trataCSV()
