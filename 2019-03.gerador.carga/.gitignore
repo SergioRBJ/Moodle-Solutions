@@ -1,0 +1,18 @@
+# Arquivos do PyCharm
+.idea/
+venv/
+*__pycache__
+
+# Arquivos de configuração da aplicação
+config/config.py
+config/conexao.py
+
+# Conf Produção
+confprod/
+
+# Testes
+/testes.py
+testes/testesFuncoes.py
+
+
+
